@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import React from 'react'
 import { ThreeDCard } from '../ui/3d-Card'
-import { Database, Layout, Server, Terminal } from 'lucide-react';
+import { Database, Layout, Server, Terminal, Brain } from 'lucide-react';
 import { Card } from '../ui/card';
 
 function SkillsSection() {
@@ -20,7 +20,15 @@ function SkillsSection() {
             bgColor: "bg-cyan-500/20",
             textColor: "text-cyan-300",
             borderColor: "border-cyan-500/30",
-            skills: ["Node.js", "Express.js", "REST APIs", "Next.js (API Routes)", "WebSockets (Socket.io)", "MongoDB", "Mongoose", "PostgreSQL", "Prisma", "Redis", "Firebase", "Appwrite", "JWT-Auth"]
+            skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "Next.js (API Routes)", "WebSockets (Socket.io)", "MongoDB", "Mongoose", "PostgreSQL", "Prisma", "Redis", "Firebase", "Appwrite", "JWT-Auth"]
+        },
+        {
+            title: "Generative AI",
+            icon: <Brain className="w-6 h-6 text-orange-500" />,
+            bgColor: "bg-orange-500/20",
+            textColor: "text-orange-300",
+            borderColor: "border-orange-500/30",
+            skills: ["OpenAI SDK", "OpenAI Agent SDK", "RAG", "Vector DB", "Memory management", "Graph memory (Neo4j)", "Local LLM (Ollama)", "LangChain", "LangGraph"]
         },
         {
             title: "DevOps & Deployment",

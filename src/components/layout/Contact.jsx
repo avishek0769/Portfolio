@@ -77,7 +77,7 @@ function Contact() {
                                     <Linkedin className="w-6 h-6" />
                                 </a>
                                 <a 
-                                    href="https://twitter.com/avishek0769" 
+                                    href="https://x.com/avishek0769" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="bg-zinc-800 p-4 rounded-xl hover:bg-sky-500 hover:text-white transition-all transform hover:-translate-y-1"

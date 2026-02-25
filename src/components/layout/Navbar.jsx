@@ -24,14 +24,15 @@ const Navbar = () => {
     }, []);
 
     const scrollToSection = (href) => {
-        setIsOpen(false);
         const element = document.querySelector(href);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
+        setIsOpen(false);
     };
 
     return (
+        <>
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'
                 }`}
@@ -71,42 +72,60 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-300 hover:text-white p-2"
+                            className="text-gray-300 hover:text-white p-2 relative z-50"
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10 overflow-hidden"
-                    >
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        scrollToSection(link.href);
-                                    }}
-                                    className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </nav>
+    
+        {/* Mobile Menu Overlay - rendered outside nav to avoid stacking issues */}
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+                    onClick={() => setIsOpen(false)}
+                />
+            )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed top-16 left-0 right-0 z-50 md:hidden bg-black/95 backdrop-blur-md border-b border-white/10"
+                >
+                    <div className="px-4 pt-4 pb-6 space-y-2">
+                        {navLinks.map((link, index) => (
+                            <motion.a
+                                key={link.name}
+                                href={link.href}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection(link.href);
+                                }}
+                                className="text-gray-300 hover:text-white active:text-blue-400 block px-4 py-3 rounded-lg text-base font-medium hover:bg-white/5 active:bg-white/10 transition-colors"
+                            >
+                                {link.name}
+                            </motion.a>
+                        ))}
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+        </>
     );
 };
 

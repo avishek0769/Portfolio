@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#hero' },
+    { name: 'About', href: '/#about' },
+    { name: 'Education', href: '/#education' },
+    { name: 'Featured Projects', href: '/#projects' },
+    { name: 'All Projects', href: '/projects' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Articles', href: '/articles' },
+    { name: 'Contact', href: '/#contact' },
 ];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,9 +29,24 @@ const Navbar = () => {
     }, []);
 
     const scrollToSection = (href) => {
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+        if (href.startsWith('/#')) {
+            const sectionId = href.substring(2);
+            if (location.pathname !== '/') {
+                navigate('/');
+                setTimeout(() => {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            } else {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        } else {
+            navigate(href);
         }
         setIsOpen(false);
     };
@@ -39,7 +59,7 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                         {/* <a
                             href="#hero"
                             onClick={(e) => { e.preventDefault(); scrollToSection('#hero'); }}

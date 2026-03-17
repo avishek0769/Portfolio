@@ -31,7 +31,7 @@ import welli13 from "/welli/welli-13.jpeg"
 import videocall1 from "/videocall/videocall-1.png"
 import videocall2 from "/videocall/videocall-2.mp4"
 
-const projectsData = [
+export const projectsData = [
     {
         title: "Video Streaming Platform",
         description: "A scalable video streaming platform inspired by YouTube, offering multi-resolution playback with manual quality selection and community engagement features.",

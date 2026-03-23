@@ -6,9 +6,9 @@ import AboutMe from './components/layout/AboutMe'
 import Education from './components/layout/Education'
 import SkillsSection from './components/layout/SkillsSection'
 import { Projects } from './components/layout/Projects'
+import { FeaturedArticles } from './components/layout/FeaturedArticles'
 import Contact from './components/layout/Contact'
 import AllProjects from './components/pages/AllProjects'
-import Articles from './components/pages/Articles'
 
 function Home() {
   return (
@@ -28,6 +28,9 @@ function Home() {
       <div id="skills">
         <SkillsSection />
       </div>
+      <div id="articles">
+        <FeaturedArticles />
+      </div>
       <div id="contact">
         <Contact />
       </div>
@@ -44,7 +47,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<AllProjects />} />
-        <Route path="/articles" element={<Articles />} />
       </Routes>
     </div>
   )

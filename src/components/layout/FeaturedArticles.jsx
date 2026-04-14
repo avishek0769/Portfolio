@@ -5,24 +5,24 @@ import { ArrowRight } from 'lucide-react';
 const articles = [
     {
         title: "Understanding WebRTC Internals: ICE, STUN, TURN, and SDP explained",
-        platform: "Hashnode",
+        platform: "Medium",
         url: "https://medium.com/@avishekadhikary42/understanding-webrtc-internals-ice-stun-turn-and-sdp-explained-2e0feff41daf",
         date: "Feb 2024",
         excerpt: "A deep dive into WebRTC's inner workings, including ICE candidates, STUN/TURN servers, and Session Description Protocol (SDP)."
     },
     {
-        title: "Building Real-Time Collaborative Applications",
-        platform: "Hashnode",
-        url: "https://avishek-adhikary.hashnode.dev/",
+        title: "Why WebRTC works on LAN but breaks on WAN ?",
+        platform: "Medium",
+        url: "https://medium.com/@avishekadhikary/why-webrtc-works-on-lan-but-breaks-on-wan-8f1c24e705a5",
         date: "Jan 2024",
-        excerpt: "Exploring the architecture and technologies behind real-time collaborative applications using WebSockets and conflict-free replicated data types."
+        excerpt: "Exploring the main reason why WebRTC applications function correctly on a local network (LAN) but encounter issues when accessed over the internet (WAN), and how to troubleshoot them."
     },
     {
-        title: "Scaling Video Streaming Processing Pipelines",
-        platform: "Hashnode",
-        url: "https://avishek-adhikary.hashnode.dev/",
+        title: "WebRTC Scaling Explained: Mesh, MCU, and SFU Architectures",
+        platform: "Medium",
+        url: "https://medium.com/@avishekadhikary/webrtc-scaling-explained-mesh-mcu-and-sfu-architectures-90bfb3394dc2",
         date: "Dec 2023",
-        excerpt: "How to design and implement a scalable video transcoding pipeline using FFmpeg, AWS S3, and serverless compute."
+        excerpt: "An in-depth look at the different architectures for scaling WebRTC applications, including Mesh, MCU, and SFU, and their trade-offs."
     }
 ];
 
@@ -46,7 +46,7 @@ export const FeaturedArticles = () => {
                         </p>
                     </div>
                     <a 
-                        href="https://avishek-adhikary.hashnode.dev/" 
+                        href="https://medium.com/@avishekadhikary" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 group text-blue-400 hover:text-blue-300 transition-colors shrink-0"

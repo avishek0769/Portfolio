@@ -106,14 +106,15 @@ function Contact() {
                                     <Twitter className="w-6 h-6" />
                                 </a>
                                 <a
-                                    href="https://hashnode.com/@avishek0769"
+                                    // href="https://hashnode.com/@avishek0769"
+                                    href="https://medium.com/@avishekadhikary"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="relative flex items-center justify-center w-[56px] h-[56px] bg-zinc-800 rounded-xl hover:bg-blue-600 transition-all transform hover:-translate-y-1"
                                 >
                                     <img 
-                                        src="/hashnode.svg" 
-                                        alt="Hashnode" 
+                                        src="/medium.webp" 
+                                        alt="Medium" 
                                         className="w-6 h-6 invert"
                                     />
                                 </a>

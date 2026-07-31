@@ -1,5 +1,31 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import { Copy, Check } from "lucide-react";
+
+const CopyButton = ({ value, label }) => {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(value).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        });
+    };
+
+    return (
+        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
+            <span className="text-gray-400 text-xs font-medium min-w-[70px]">{label}</span>
+            <span className="font-mono text-sm text-white flex-1">{value}</span>
+            <button
+                onClick={handleCopy}
+                title={`Copy ${label}`}
+                className="ml-1 p-1 rounded hover:bg-white/10 transition-colors text-gray-400 hover:text-white flex-shrink-0"
+            >
+                {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
+            </button>
+        </div>
+    );
+};
 
 export const Timeline = ({ data }) => {
     const ref = useRef(null);
@@ -28,6 +54,19 @@ export const Timeline = ({ data }) => {
                     Projects That Define Me
                 </h2>
             </div>
+
+            {/* Shared Demo Credentials Banner */}
+            <div className="max-w-2xl mx-auto px-6 mt-14 mb-[-1rem]">
+                <div className="border border-blue-500/20 rounded-2xl p-5 bg-blue-500/5">
+                    <p className="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Demo Credentials</p>
+                    <p className="text-gray-400 text-sm mb-4">Same credentials apply across all live demos.</p>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                        <CopyButton label="Username" value="avishek09" />
+                        <CopyButton label="Password" value="avishek09" />
+                    </div>
+                </div>
+            </div>
+
             <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
                 {data.map((item, index) => (
                     <div key={index} className="flex justify-start pt-10 md:pt-40 md:gap-10">

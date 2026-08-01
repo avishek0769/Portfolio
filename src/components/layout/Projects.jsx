@@ -2,9 +2,9 @@ import { Timeline } from "../ui/timeline";
 import { Github, ExternalLink } from "lucide-react";
 
 
-export const projectsData = [
+const projectsData = [
     {
-        title: "DocChat - AI Documentation Assistant",
+        title: "DocChat - AI Docs Assistant",
         points: [
             "Built an AI documentation chat platform that crawls documentation websites and transforms them into searchable knowledge bases.",
             "Implemented vector-based RAG using Qdrant for embedding-based retrieval.",
@@ -12,6 +12,7 @@ export const projectsData = [
             "Integrated multiple LLM providers and built asynchronous processing for documentation crawling and knowledge-base creation.",
             "Implemented token usage tracking and secure user API key management for AI providers.",
         ],
+        tech: ["React.js", "Express.js", "PostgreSQL", "Prisma", "BullMQ", "Redis", "Qdrant", "OpenAI SDK", "Mem0"],
         github: "https://github.com/avishek0769/DocChat",
         link: "https://avishek.short.gy/docchat",
     },
@@ -24,6 +25,7 @@ export const projectsData = [
             "Built backend services to manage code execution and containerized runtime environments.",
             "Implemented real-time communication for interactive code execution and output handling.",
         ],
+        tech: ["React.js", "Express.js", "MongoDB", "Mongoose", "Docker", "WebSockets", "Ngrok"],
         github: "https://github.com/avishek0769/Codium-IDE",
         link: "https://avishek.short.gy/codium",
     },
@@ -36,6 +38,7 @@ export const projectsData = [
             "Built backend services using Node.js and Express.js for video management and streaming workflows.",
             "Worked with asynchronous video processing and cloud-based infrastructure for media storage and delivery.",
         ],
+        tech: ["HTML/CSS/JS", "Express.js", "FFmpeg", "MongoDB", "Mongoose", "Docker", "AWS (ECS, S3)"],
         github: "https://github.com/avishek0769/videotubes",
         link: "https://avishek.short.gy/videotubes",
     },
@@ -48,6 +51,7 @@ export const projectsData = [
             "Implemented WebSockets for signaling, room management, and real-time participant coordination.",
             "Worked with media producers and consumers to manage real-time audio and video streams.",
         ],
+        tech: ["React.js", "Express.js", "WebRTC", "Mediasoup", "WebSockets"],
         github: "https://github.com/avishek0769/Videocall",
         link: "https://avishek.short.gy/videocall",
     },
@@ -60,6 +64,7 @@ export const projectsData = [
             "Built the backend with Node.js, Express.js, PostgreSQL, and Prisma, with Clerk for authentication.",
             "Worked on containerized deployments, domain routing, SSL configuration, and cloud infrastructure.",
         ],
+        tech: ["React.js", "Express.js", "PostgreSQL", "Prisma", "Docker", "AWS (ECS, S3)", "Clerk"],
         github: "https://github.com/avishek0769/Cloudify",
         link: "https://avishek.short.gy/cloudify",
     },
@@ -72,6 +77,7 @@ export const projectsData = [
             "Allowed guests to access shared events without creating an account while maintaining privacy and personalized photo collections.",
             "Built photographer tools for managing event photos, monitoring guest activity, and manually managing guest collections.",
         ],
+        tech: ["React.js", "Express.js", "MongoDB", "vladmandic/face-api", "Qdrant", "BullMQ"],
         github: "https://github.com/avishek0769/SpotMe",
         link: "https://avishek.short.gy/spotme",
     }
@@ -88,6 +94,20 @@ export function Projects() {
                         <li key={i}>{point}</li>
                     ))}
                 </ul>
+
+                {/* Tech Stack */}
+                {project.tech && project.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-1">
+                        {project.tech.map((t, idx) => (
+                            <span
+                                key={idx}
+                                className="px-3 py-1 text-sm rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-300 font-medium"
+                            >
+                                {t}
+                            </span>
+                        ))}
+                    </div>
+                )}
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-3 mt-1">

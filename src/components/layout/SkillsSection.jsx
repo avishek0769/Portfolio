@@ -8,7 +8,7 @@ function SkillsSection() {
             icon: <Server className="w-5 h-5 text-cyan-500" />,
             textColor: "text-cyan-300",
             badgeBg: "bg-cyan-500/10 border-cyan-500/25",
-            skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "Next.js (API Routes)", "WebSockets (Socket.io)", "MongoDB", "Mongoose", "PostgreSQL", "Prisma", "Redis", "Firebase", "Appwrite", "JWT-Auth"]
+            skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "Next.js (API Routes)", "WebSockets (Socket.io)", "GraphQL", "gRPC", "MongoDB", "Mongoose", "PostgreSQL", "Prisma", "Redis", "JWT-Auth"]
         },
         {
             title: "Generative AI",
@@ -29,7 +29,7 @@ function SkillsSection() {
             icon: <Terminal className="w-5 h-5 text-pink-500" />,
             textColor: "text-pink-300",
             badgeBg: "bg-pink-500/10 border-pink-500/25",
-            skills: ["AWS", "Nginx", "Docker", "CI/CD", "Linux (CLI)"]
+            skills: ["AWS", "Nginx", "Docker", "CI/CD", "Linux (CLI)", "Firebase", "Appwrite"]
         },
         {
             title: "Tools & Productivity",

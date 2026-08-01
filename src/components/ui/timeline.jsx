@@ -1,6 +1,6 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, KeyRound } from "lucide-react";
 
 const CopyButton = ({ value, label }) => {
     const [copied, setCopied] = useState(false);
@@ -13,15 +13,21 @@ const CopyButton = ({ value, label }) => {
     };
 
     return (
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
-            <span className="text-gray-400 text-xs font-medium min-w-[70px]">{label}</span>
-            <span className="font-mono text-sm text-white flex-1">{value}</span>
+        <div className="relative group flex items-center justify-between gap-3 bg-zinc-900/60 border border-zinc-800 hover:border-blue-500/30 rounded-xl px-4 py-2.5 transition-all duration-300 w-full shadow-sm hover:shadow-blue-950/20">
+            <div className="flex flex-col">
+                <span className="text-[10px] uppercase tracking-wider font-semibold text-gray-500">{label}</span>
+                <span className="font-mono text-sm text-zinc-200 mt-0.5 select-all">{value}</span>
+            </div>
             <button
                 onClick={handleCopy}
                 title={`Copy ${label}`}
-                className="ml-1 p-1 rounded hover:bg-white/10 transition-colors text-gray-400 hover:text-white flex-shrink-0"
+                className={`p-2 rounded-lg border transition-all duration-300 flex items-center justify-center cursor-pointer ${
+                    copied 
+                        ? "bg-green-500/10 border-green-500/30 text-green-400" 
+                        : "bg-zinc-800/40 border-zinc-700/50 hover:bg-blue-600 hover:border-blue-500 text-zinc-400 hover:text-white"
+                }`}
             >
-                {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
+                {copied ? <Check size={14} /> : <Copy size={14} />}
             </button>
         </div>
     );
@@ -56,11 +62,28 @@ export const Timeline = ({ data }) => {
             </div>
 
             {/* Shared Demo Credentials Banner */}
-            <div className="max-w-2xl mx-auto px-6 mt-14 mb-[-1rem]">
-                <div className="border border-blue-500/20 rounded-2xl p-5 bg-blue-500/5">
-                    <p className="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Demo Credentials</p>
-                    <p className="text-gray-400 text-sm mb-4">Same credentials apply across all live demos.</p>
-                    <div className="flex flex-col sm:flex-row gap-2">
+            <div className="max-w-2xl mx-auto px-6 mt-14 mb-4">
+                <div className="relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-gradient-to-br from-zinc-900/80 via-zinc-950/90 to-zinc-900/80 backdrop-blur-xl p-5 md:p-6 shadow-xl shadow-black/40">
+                    {/* Glowing subtle top line */}
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+                    
+                    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shadow-inner flex-shrink-0">
+                                <KeyRound size={20} className="animate-pulse" />
+                            </div>
+                            <div>
+                                <h4 className="text-white font-semibold text-base tracking-wide">
+                                    Demo Credentials
+                                </h4>
+                                <p className="text-gray-400 text-xs mt-0.5">
+                                    Same login details apply across all live project demos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <CopyButton label="Username" value="avishek09" />
                         <CopyButton label="Password" value="avishek09" />
                     </div>

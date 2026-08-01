@@ -1,45 +1,8 @@
-import React, { useState } from "react";
 import { Timeline } from "../ui/timeline";
-import { Github, ExternalLink, Copy, Check } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
-const CopyButton = ({ value, label }) => {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(value).then(() => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        });
-    };
-
-    return (
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
-            <span className="text-gray-400 text-xs font-medium min-w-[70px]">{label}</span>
-            <span className="font-mono text-sm text-white flex-1">{value}</span>
-            <button
-                onClick={handleCopy}
-                title={`Copy ${label}`}
-                className="ml-1 p-1 rounded hover:bg-white/10 transition-colors text-gray-400 hover:text-white flex-shrink-0"
-            >
-                {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
-            </button>
-        </div>
-    );
-};
 
 export const projectsData = [
-    {
-        title: "Cloudify - Frontend Hosting Platform",
-        points: [
-            "Built a cloud hosting platform that allows users to deploy and host frontend applications.",
-            "Implemented an automated deployment pipeline using Docker containers and AWS ECS/Fargate.",
-            "Used AWS S3 for project and build artifact storage and Nginx for reverse proxy and routing.",
-            "Built the backend with Node.js, Express.js, PostgreSQL, and Prisma, with Clerk for authentication.",
-            "Worked on containerized deployments, domain routing, SSL configuration, and cloud infrastructure.",
-        ],
-        github: "https://github.com/avishek0769/Cloudify",
-        link: "https://avishek.short.gy/cloudify",
-    },
     {
         title: "DocChat - AI Documentation Assistant",
         points: [
@@ -49,7 +12,7 @@ export const projectsData = [
             "Integrated multiple LLM providers and built asynchronous processing for documentation crawling and knowledge-base creation.",
             "Implemented token usage tracking and secure user API key management for AI providers.",
         ],
-        github: null,
+        github: "https://github.com/avishek0769/DocChat",
         link: "https://avishek.short.gy/docchat",
     },
     {
@@ -61,7 +24,7 @@ export const projectsData = [
             "Built backend services to manage code execution and containerized runtime environments.",
             "Implemented real-time communication for interactive code execution and output handling.",
         ],
-        github: "https://github.com/avishek0769/Cloud-IDE",
+        github: "https://github.com/avishek0769/Codium-IDE",
         link: "https://avishek.short.gy/codium",
     },
     {
@@ -77,18 +40,6 @@ export const projectsData = [
         link: "https://avishek.short.gy/videotubes",
     },
     {
-        title: "SpotMe - Photo Discovery",
-        points: [
-            "Built an AI-powered event photo discovery platform for weddings, college events, concerts, conferences, and other large gatherings.",
-            "Implemented face-based photo matching that allows guests to upload a selfie and discover their photos from large event collections.",
-            "Built event-based photo management, paginated galleries, personalized collections, photo downloads, and controlled guest access.",
-            "Allowed guests to access shared events without creating an account while maintaining privacy and personalized photo collections.",
-            "Built photographer tools for managing event photos, monitoring guest activity, and manually managing guest collections.",
-        ],
-        github: "https://github.com/avishek0769/SpotMe",
-        link: "https://avishek.short.gy/spotme",
-    },
-    {
         title: "Video Calling Platform",
         points: [
             "Built a real-time group video calling platform that enables multiple users to participate in audio and video calls.",
@@ -99,6 +50,30 @@ export const projectsData = [
         ],
         github: "https://github.com/avishek0769/Videocall",
         link: "https://avishek.short.gy/videocall",
+    },
+    {
+        title: "Cloudify - Frontend Hosting Platform",
+        points: [
+            "Built a cloud hosting platform that allows users to deploy and host frontend applications.",
+            "Implemented an automated deployment pipeline using Docker containers and AWS ECS/Fargate.",
+            "Used AWS S3 for project and build artifact storage and Nginx for reverse proxy and routing.",
+            "Built the backend with Node.js, Express.js, PostgreSQL, and Prisma, with Clerk for authentication.",
+            "Worked on containerized deployments, domain routing, SSL configuration, and cloud infrastructure.",
+        ],
+        github: "https://github.com/avishek0769/Cloudify",
+        link: "https://avishek.short.gy/cloudify",
+    },
+    {
+        title: "SpotMe - Photo Discovery",
+        points: [
+            "Built an AI-powered event photo discovery platform for weddings, college events, concerts, conferences, and other large gatherings.",
+            "Implemented face-based photo matching that allows guests to upload a selfie and discover their photos from large event collections.",
+            "Built event-based photo management, paginated galleries, personalized collections, photo downloads, and controlled guest access.",
+            "Allowed guests to access shared events without creating an account while maintaining privacy and personalized photo collections.",
+            "Built photographer tools for managing event photos, monitoring guest activity, and manually managing guest collections.",
+        ],
+        github: "https://github.com/avishek0769/SpotMe",
+        link: "https://avishek.short.gy/spotme",
     }
 ];
 
@@ -141,11 +116,11 @@ export function Projects() {
                             className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2 text-sm"
                         >
                             <ExternalLink size={16} />
-                            Live Demo
+                            Live Website
                         </a>
                     ) : (
                         <span className="px-5 py-2.5 bg-gray-800/50 text-gray-500 rounded-full text-sm border border-gray-700/50 cursor-not-allowed">
-                            Live Demo Unavailable
+                            Live Website Unavailable
                         </span>
                     )}
                 </div>

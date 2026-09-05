@@ -42,7 +42,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='bg-black min-h-screen text-white'>
+    <div className='bg-black min-h-screen text-white w-full max-w-full overflow-x-hidden'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

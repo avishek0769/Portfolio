@@ -43,7 +43,7 @@ function Contact() {
                                     href="mailto:avishekadhikary.24@nshm.edu.in"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-lg font-medium hover:text-blue-400 transition-colors"
+                                    className="text-lg font-medium hover:text-blue-400 transition-colors break-all"
                                 >
                                     avishekadhikary.24@nshm.edu.in
                                 </a>

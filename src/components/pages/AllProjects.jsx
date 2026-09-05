@@ -191,7 +191,7 @@ const AllProjects = () => {
     }, []);
 
     return (
-        <div className="min-h-screen pt-24 px-6 md:px-12 lg:px-24 pb-12 bg-black text-white">
+        <div className="min-h-screen pt-24 px-4 sm:px-6 md:px-12 lg:px-24 pb-12 bg-black text-white w-full max-w-full overflow-x-hidden">
             <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-blue-400">All Projects</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {projectsData.map((project, index) => (

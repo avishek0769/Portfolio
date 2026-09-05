@@ -41,7 +41,7 @@ function SkillsSection() {
     ];
 
     return (
-        <section className="max-w-7xl mx-auto px-4 pt-32 pb-20">
+        <section className="max-w-7xl mx-auto px-4 pt-16 pb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                 Skills & Expertise
             </h2>

@@ -57,7 +57,7 @@ export function Hero() {
                     </motion.div>
 
                     {/* Typewriter Effect */}
-                    <div className="min-h-16 flex items-center justify-center w-[70rem] mb-6 mt-6">
+                    <div className="min-h-16 flex items-center justify-center w-full max-w-4xl mb-6 mt-6">
                         {showTypeWriter && <TypewriterEffect words={words} className="text-center" />}
                     </div>
 

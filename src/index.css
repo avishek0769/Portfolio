@@ -5,8 +5,12 @@
 }
 
 html,
-body {
+body,
+#root {
   font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Thin dark scrollbar for scrollable containers */

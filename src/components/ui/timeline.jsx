@@ -54,7 +54,7 @@ export const Timeline = ({ data }) => {
     const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
     return (
-        <div className="w-full bg-black font-sans md:px-10" ref={containerRef}>
+        <div className="w-full max-w-full overflow-x-hidden bg-black font-sans md:px-10" ref={containerRef}>
             <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 mt-[-4rem] mb-[-9rem]">
                 <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 text-center">
                     Projects That Define Me

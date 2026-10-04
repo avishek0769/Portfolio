@@ -146,7 +146,7 @@ export default function FreelanceProjects() {
     };
 
     return (
-        <section className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto bg-black text-white relative z-10">
+        <section className="py-12 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto bg-black text-white relative z-10">
             {/* Header Badge & Title */}
             <div className="flex flex-col items-center text-center mb-16">
                 <motion.div

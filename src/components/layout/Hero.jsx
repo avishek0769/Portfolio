@@ -85,7 +85,7 @@ export function Hero() {
                             Let's discuss a project
                         </a>
                         <a
-                            href="#projects"
+                            href="#freelance"
                             className="px-8 py-3 bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full font-medium transition-all"
                         >
                             View my work

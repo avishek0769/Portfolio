@@ -12,61 +12,67 @@ import {
     X,
     Sparkles,
     ArrowRight,
-    Layers
+    Layers,
 } from "lucide-react";
 
 const freelanceProjects = [
     {
         id: "unevox",
-        title: "Unevox — Enterprise Digital Solutions Platform",
-        category: "Corporate Agency",
+        title: "Unevox — Social Media Marketing Agency Website",
+        category: "Business Website & Digital Agency",
         isApp: false,
-        link: "https://unevox.com",
-        tagline: "Building brand authority and converting site visitors into high-ticket enterprise leads.",
+        link: "https://unevox.netlify.app",
         images: Array.from({ length: 13 }, (_, i) => `/freelancing-projects/unevox/unevox-${i + 1}.png`),
-        description:
-            "Unevox needed a modern, high-converting digital storefront to present their enterprise tech services, agency capabilities, and client case studies to corporate decision-makers.",
+        description: "Designed and developed a complete business website for Unevox Services OPC Pvt. Ltd., a creative media and digital marketing agency. The website showcases its services, brand collaborations, sports campaigns, cultural projects, achievements, and creative portfolio through a distinctive editorial design. Built to establish brand credibility, communicate the agency's capabilities, and turn visitors into potential clients.",
         businessImpact: [
-            { label: "Lead Conversion Rate", value: "+45%" },
-            { label: "Corporate Trust Factor", value: "Enterprise-Ready" },
-            { label: "Client Inquiries", value: "3x Growth" },
+            { label: "Business Focus", value: "Client Acquisition" },
+            { label: "Portfolio", value: "20+ Brands & Companies" },
+            { label: "Content Management", value: "Sanity CMS" },
         ],
         benefits: [
-            "Establishes immediate trust and credibility with corporate clients",
-            "Automated lead capture funnel that qualifies incoming inquiries 24/7",
-            "Lightning-fast load speed and mobile responsiveness across all devices",
-            "SEO-optimized structure helping rank for high-intent business searches"
-        ]
+            "Builds brand credibility through a premium digital presence that reflects the quality of Unevox's creative work.",
+            "Helps attract potential clients by presenting the agency's services, expertise, campaigns, and brand collaborations.",
+            "Creates more opportunities for client enquiries through clear calls to action and integrated lead generation forms.",
+            "Empowers the team to independently publish blogs and manage website content through Sanity CMS.",
+            "Establishes a responsive, search-engine-friendly platform to strengthen online visibility and support long-term business growth."
+        ],
     },
     {
         id: "farmigo",
-        title: "Farmigo — Direct Farm-to-Table Delivery Mobile App",
+        title: "Farmigo — Agricultural E-commerce Mobile App",
         category: "Mobile Commerce & Agriculture",
         isApp: true,
-        link: null, // Mobile app
-        tagline: "Empowering local agricultural producers to sell direct-to-consumer and bypass middleman fees.",
+        link: null,
         images: Array.from({ length: 10 }, (_, i) => `/freelancing-projects/farmigo/farmigo-${i + 1}.jpeg`),
-        description:
-            "Farmigo is an intuitive mobile application for iOS and Android that connects local farmers directly with household consumers for scheduled doorstep deliveries of fresh produce and dairy products.",
+        description: "Farmigo is a React Native mobile application built for agricultural e-commerce. Customers can browse products across categories, manage their cart, place orders, make payments, and track their purchases, while sellers can manage products, inventory, and incoming orders through the platform.",
         businessImpact: [
-            { label: "Middleman Commission", value: "0% (Saved)" },
-            { label: "Daily Deliveries", value: "300% Increase" },
-            { label: "Customer Retention", value: "88% Repeat Orders" },
+            {
+                label: "Platform",
+                value: "Mobile Commerce",
+            },
+            {
+                label: "Customer Experience",
+                value: "End-to-End Ordering",
+            },
+            {
+                label: "Seller Operations",
+                value: "Product & Order Management",
+            },
         ],
         benefits: [
-            "Farmers retain 100% of sale value without paying heavy marketplace margins",
-            "Simplified one-tap order flow designed specifically for easy daily mobile use",
-            "Live delivery route coordination and real-time order status notifications",
-            "Automated subscription management for weekly milk and produce deliveries"
+            "Expands the business's reach by providing customers with a digital platform to discover and purchase agricultural products",
+            "Creates a more convenient buying experience, making it easier for customers to browse products and complete purchases",
+            "Streamlines seller operations by bringing product listings, inventory, and order management into one platform",
+            "Digitises the ordering and payment process, reducing dependence on manual order handling",
+            "Establishes a scalable digital sales channel that can support business growth and a wider customer base"
         ]
     },
     {
         id: "restaurant",
-        title: "Gourmet Haven — Restaurant & Direct Online Ordering",
+        title: "Ember & Oak — Restaurant & Direct Online Ordering",
         category: "Hospitality & Food Business",
         isApp: false,
-        link: "https://restaurant.avishek.dev",
-        tagline: "Eliminating third-party commission fees while doubling direct online table bookings and food orders.",
+        link: "https://embernoakfood.netlify.app",
         images: Array.from({ length: 16 }, (_, i) => `/freelancing-projects/restaurant/restaurant-${i + 1}.png`),
         description:
             "A sleek, mouth-watering restaurant website engineered to give diners a digital table reservation experience and a zero-commission direct online ordering system.",
@@ -79,31 +85,30 @@ const freelanceProjects = [
             "Reclaims high commission margins lost to third-party food delivery apps",
             "Interactive QR-code digital menu for instant contactless dining table orders",
             "Instant SMS & email reservation confirmations for customer convenience",
-            "Showcases food photography and customer reviews to drive walk-in traffic"
-        ]
+            "Showcases food photography and customer reviews to drive walk-in traffic",
+        ],
     },
     {
         id: "clothing",
-        title: "VogueCraft — Boutique E-Commerce & Fashion Store",
-        category: "Retail E-Commerce",
+        title: "Urban Threads — Boutique Fashion E-Commerce Website",
+        category: "Fashion & E-Commerce",
         isApp: false,
-        link: "https://clothing.avishek.dev",
-        tagline: "Transforming a local fashion boutique into a nationwide online brand with 24/7 automated sales.",
+        link: "https://urbanthreadsfashion.netlify.app",
         images: Array.from({ length: 13 }, (_, i) => `/freelancing-projects/clothing/clothing-${i + 1}.png`),
-        description:
-            "An elegant, fast-loading online store created for a clothing boutique looking to scale beyond physical store foot traffic and sell products to customers across the country.",
+        description: "A self-initiated fashion e-commerce website concept built to demonstrate how a modern clothing brand can present its collections, showcase products, and provide a smooth online shopping experience.",
         businessImpact: [
-            { label: "Monthly Sales Growth", value: "+180% Revenue" },
-            { label: "Geographic Reach", value: "Nationwide Customers" },
-            { label: "Cart Conversion", value: "3.2x Industry Avg" },
+            { label: "Project Type", value: "Self-Initiated Concept" },
+            { label: "Industry", value: "Fashion & Retail" },
+            { label: "Focus", value: "E-Commerce Experience" },
         ],
         benefits: [
-            "Expands customer sales base 24 hours a day beyond physical store hours",
-            "Mobile-optimized catalog browsing with seamless high-res product galleries",
-            "Secure, effortless checkout flow supporting multiple payment options",
-            "Automated inventory management sync preventing double-bookings"
-        ]
-    }
+            "Creates an online sales channel, allowing the brand to reach customers beyond its physical store location",
+            "Makes fashion collections accessible to customers 24/7, enabling shopping beyond business hours",
+            "Improves product discovery and presentation, helping customers make informed purchasing decisions",
+            "Simplifies the shopping journey from browsing products to managing carts and placing orders",
+            "Establishes a professional digital presence that helps build brand credibility and customer trust",
+        ],
+    },
 ];
 
 export default function FreelanceProjects() {
@@ -172,7 +177,9 @@ export default function FreelanceProjects() {
                     viewport={{ once: true }}
                     className="text-gray-400 text-base sm:text-lg max-w-3xl mt-4 leading-relaxed"
                 >
-                    A digital presence is more than just code — it's an automated sales representative, a trust builder, and a revenue driver. Here is how custom web and mobile software created tangible ROI for client businesses.
+                    A digital presence is more than just code — it's an automated sales representative, a trust builder,
+                    and a revenue driver. Here is how custom web and mobile software created tangible ROI for client
+                    businesses.
                 </motion.p>
             </div>
 
@@ -190,7 +197,11 @@ export default function FreelanceProjects() {
                                     : "bg-zinc-900/80 border-zinc-800 text-gray-400 hover:text-white hover:bg-zinc-800/80"
                             }`}
                         >
-                            {p.isApp ? <Smartphone size={16} className={isActive ? "text-white" : "text-purple-400"} /> : <Globe size={16} className={isActive ? "text-white" : "text-blue-400"} />}
+                            {p.isApp ? (
+                                <Smartphone size={16} className={isActive ? "text-white" : "text-purple-400"} />
+                            ) : (
+                                <Globe size={16} className={isActive ? "text-white" : "text-blue-400"} />
+                            )}
                             <span>{p.title.split("—")[0].trim()}</span>
                             {p.isApp && (
                                 <span className="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 ml-1">
@@ -204,10 +215,8 @@ export default function FreelanceProjects() {
 
             {/* Project Details Showcase Container */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-zinc-900/40 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 md:p-10 backdrop-blur-xl shadow-2xl">
-                
                 {/* Visual Media Device Frame (Slider) */}
                 <div className="lg:col-span-7 flex flex-col items-center justify-center relative min-h-[380px] sm:min-h-[460px]">
-                    
                     {/* Website Browser Frame Mockup */}
                     {!project.isApp ? (
                         <div className="w-full max-w-2xl bg-zinc-900 border border-zinc-700/70 rounded-2xl shadow-2xl overflow-hidden group relative">
@@ -228,7 +237,7 @@ export default function FreelanceProjects() {
                             </div>
 
                             {/* Image Container Aspect Ratio */}
-                            <div 
+                            <div
                                 className="relative aspect-[16/9] w-full bg-zinc-950 overflow-hidden cursor-pointer"
                                 onClick={() => setFullscreenImage(project.images[currentImageIndex])}
                                 onMouseEnter={() => setIsAutoPlay(false)}
@@ -279,7 +288,7 @@ export default function FreelanceProjects() {
                             </div>
 
                             {/* Phone Screen aspect-[9/19] */}
-                            <div 
+                            <div
                                 className="relative aspect-[9/19] w-full bg-black overflow-hidden cursor-pointer pt-4"
                                 onClick={() => setFullscreenImage(project.images[currentImageIndex])}
                                 onMouseEnter={() => setIsAutoPlay(false)}
@@ -361,13 +370,9 @@ export default function FreelanceProjects() {
                             {project.title.split("—")[0].trim()}
                         </h3>
 
-                        <p className="text-blue-300 text-sm font-medium mb-4 italic">
-                            "{project.tagline}"
-                        </p>
+                        {/* <p className="text-blue-300 text-sm font-medium mb-4 italic">"{project.tagline}"</p> */}
 
-                        <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                            {project.description}
-                        </p>
+                        <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">{project.description}</p>
 
                         {/* Business Impact Metrics Grid */}
                         <div className="mb-6">
@@ -433,6 +438,50 @@ export default function FreelanceProjects() {
                 </div>
             </div>
 
+            {/* Project Prev / Next Navigation */}
+            <div className="flex items-center justify-between mt-6 pt-5 border-t border-zinc-800/60">
+                <button
+                    onClick={() => setActiveTab((prev) => Math.max(prev - 1, 0))}
+                    disabled={activeTab === 0}
+                    className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-sm border transition-all duration-300 cursor-pointer ${
+                        activeTab === 0
+                            ? "opacity-30 cursor-not-allowed bg-zinc-900/50 border-zinc-800 text-gray-500"
+                            : "bg-zinc-900/80 border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 hover:shadow-lg"
+                    }`}
+                >
+                    <ChevronLeft size={16} />
+                    <span>Previous</span>
+                </button>
+
+                <div className="flex items-center gap-2">
+                    {freelanceProjects.map((_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setActiveTab(idx)}
+                            className={`transition-all duration-300 rounded-full cursor-pointer ${
+                                activeTab === idx
+                                    ? "w-6 h-2 bg-blue-500"
+                                    : "w-2 h-2 bg-zinc-700 hover:bg-zinc-500"
+                            }`}
+                            aria-label={`Go to project ${idx + 1}`}
+                        />
+                    ))}
+                </div>
+
+                <button
+                    onClick={() => setActiveTab((prev) => Math.min(prev + 1, freelanceProjects.length - 1))}
+                    disabled={activeTab === freelanceProjects.length - 1}
+                    className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-sm border transition-all duration-300 cursor-pointer ${
+                        activeTab === freelanceProjects.length - 1
+                            ? "opacity-30 cursor-not-allowed bg-zinc-900/50 border-zinc-800 text-gray-500"
+                            : "bg-gradient-to-r from-blue-600/20 to-indigo-600/20 border-blue-500/30 text-blue-300 hover:from-blue-600/30 hover:to-indigo-600/30 hover:text-white hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-600/10"
+                    }`}
+                >
+                    <span>Next</span>
+                    <ChevronRight size={16} />
+                </button>
+            </div>
+
             {/* Business Owner Persuasion Banner */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -446,7 +495,9 @@ export default function FreelanceProjects() {
                         Ready to Upgrade Your Business Digital Presence?
                     </h3>
                     <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                        Whether you need a high-converting business website, a custom booking portal, or a dedicated mobile application — software should work for you to bring more customers and increase your bottom line.
+                        Whether you need a high-converting business website, a custom booking portal, or a dedicated
+                        mobile application — software should work for you to bring more customers and increase your
+                        bottom line.
                     </p>
                 </div>
                 <a

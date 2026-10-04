@@ -40,12 +40,12 @@ function Contact() {
                                     Email
                                 </p>
                                 <a
-                                    href="mailto:avishekadhikary.24@nshm.edu.in"
+                                    href="mailto:avishekadhikary42@gmail.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-lg font-medium hover:text-blue-400 transition-colors break-all"
                                 >
-                                    avishekadhikary.24@nshm.edu.in
+                                    avishekadhikary42@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -133,12 +133,12 @@ function Contact() {
                             discussions. Feel free to reach out.
                         </p>
                         <a
-                            href="mailto:avishekadhikary.24@nshm.edu.in"
+                            href="https://linkedin.com/in/avishekadhikary"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-lg shadow-lg shadow-blue-600/20 cursor-pointer relative z-20"
                         >
-                            <Mail className="w-5 h-5" />
+                            <Linkedin className="w-5 h-5" />
                             Say Hello
                         </a>
                     </div>

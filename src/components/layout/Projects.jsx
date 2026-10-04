@@ -1,6 +1,7 @@
 import { Sparkles, Github, ExternalLink, Copy, Check, KeyRound } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Timeline } from "../ui/timeline";
 
 const projectsData = [
     {
@@ -176,95 +177,93 @@ export function Projects() {
                 </div>
             </motion.div>
 
-            {/* ── Project Cards ── */}
-            <div className="flex flex-col gap-5">
-                {projectsData.map((project, index) => (
-                    <motion.div
-                        key={project.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.45, delay: index * 0.06 }}
-                        viewport={{ once: true, margin: "-60px" }}
-                        className="group relative flex gap-5 bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 hover:border-zinc-700/80 transition-colors"
-                    >
-                        {/* Number */}
-                        <div className="hidden sm:flex flex-col items-center gap-2 shrink-0 pt-0.5">
-                            <span className="text-[11px] font-bold text-zinc-600 tabular-nums w-6 text-center">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
-                            <div className="w-px flex-1 bg-zinc-800" />
-                        </div>
 
-                        {/* Content */}
-                        <div className="flex flex-col gap-4 min-w-0 flex-1">
-                            {/* Title row */}
-                            <div className="flex items-start justify-between gap-3 flex-wrap">
-                                <h3 className="text-base sm:text-xl font-semibold text-white leading-snug">
-                                    {project.title}
-                                </h3>
+            {/* ── Project Cards with Scroll-Animated Timeline Component ── */}
+            <Timeline>
+                <div className="flex flex-col gap-6">
+                    {projectsData.map((project, index) => (
+                        <motion.div
+                            key={project.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.45, delay: index * 0.06 }}
+                            viewport={{ once: true, margin: "-60px" }}
+                            className="group relative bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 hover:border-zinc-700/80 transition-colors"
+                        >
+                            {/* Simple timeline node dot aligned over the line */}
+                            <div className="absolute -left-[19px] sm:-left-[23px] top-8 w-3 h-3 rounded-full bg-zinc-950 border-2 border-blue-500 group-hover:border-purple-400 group-hover:scale-125 transition-all shadow-sm z-10" />
+
+                            {/* Content */}
+                            <div className="flex flex-col gap-4 min-w-0 flex-1">
+                                {/* Title row */}
+                                <div className="flex items-start justify-between gap-3 flex-wrap">
+                                    <h3 className="text-base sm:text-xl font-semibold text-white leading-snug">
+                                        {project.title}
+                                    </h3>
+                                </div>
+
+                                {/* Bullet points */}
+                                <ul className="flex flex-col gap-2">
+                                    {project.points.map((point, i) => (
+                                        <li key={i} className="flex items-start gap-2.5 text-md text-gray-400 leading-relaxed">
+                                            <span className="mt-[7px] w-1 h-1 rounded-full bg-zinc-600 shrink-0" />
+                                            {point}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* Tech chips */}
+                                <div className="flex flex-wrap gap-1.5">
+                                    {project.tech.map((t) => (
+                                        <span
+                                            key={t}
+                                            className="px-2.5 py-1 text-xs rounded-lg bg-blue-500/8 border border-blue-500/15 text-blue-300/80 font-medium"
+                                        >
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Action buttons */}
+                                <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                                    {project.github ? (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-gray-300 bg-zinc-800/60 border border-zinc-700/60 rounded-lg hover:bg-zinc-700/60 hover:text-white transition-colors"
+                                        >
+                                            <Github size={14} />
+                                            GitHub
+                                        </a>
+                                    ) : (
+                                        <span className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-zinc-600 bg-zinc-800/30 border border-zinc-800 rounded-lg cursor-not-allowed">
+                                            <Github size={14} />
+                                            GitHub (Coming Soon)
+                                        </span>
+                                    )}
+
+                                    {project.link ? (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-600/80 border border-blue-500/40 rounded-lg hover:bg-blue-600 transition-colors"
+                                        >
+                                            <ExternalLink size={14} />
+                                            Live Demo
+                                        </a>
+                                    ) : (
+                                        <span className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-zinc-600 bg-zinc-800/30 border border-zinc-800 rounded-lg cursor-not-allowed">
+                                            Live Demo Unavailable
+                                        </span>
+                                    )}
+                                </div>
                             </div>
-
-                            {/* Bullet points */}
-                            <ul className="flex flex-col gap-2">
-                                {project.points.map((point, i) => (
-                                    <li key={i} className="flex items-start gap-2.5 text-md text-gray-400 leading-relaxed">
-                                        <span className="mt-[7px] w-1 h-1 rounded-full bg-zinc-600 shrink-0" />
-                                        {point}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* Tech chips */}
-                            <div className="flex flex-wrap gap-1.5">
-                                {project.tech.map((t) => (
-                                    <span
-                                        key={t}
-                                        className="px-2.5 py-1 text-xs rounded-lg bg-blue-500/8 border border-blue-500/15 text-blue-300/80 font-medium"
-                                    >
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Action buttons */}
-                            <div className="flex flex-wrap items-center gap-2.5 pt-1">
-                                {project.github ? (
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-gray-300 bg-zinc-800/60 border border-zinc-700/60 rounded-lg hover:bg-zinc-700/60 hover:text-white transition-colors"
-                                    >
-                                        <Github size={14} />
-                                        GitHub
-                                    </a>
-                                ) : (
-                                    <span className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-zinc-600 bg-zinc-800/30 border border-zinc-800 rounded-lg cursor-not-allowed">
-                                        <Github size={14} />
-                                        GitHub (Coming Soon)
-                                    </span>
-                                )}
-
-                                {project.link ? (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-600/80 border border-blue-500/40 rounded-lg hover:bg-blue-600 transition-colors"
-                                    >
-                                        <ExternalLink size={14} />
-                                        Live Demo
-                                    </a>
-                                ) : (
-                                    <span className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-zinc-600 bg-zinc-800/30 border border-zinc-800 rounded-lg cursor-not-allowed">
-                                        Live Demo Unavailable
-                                    </span>
-                                )}
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </Timeline>
 
         </div>
     );

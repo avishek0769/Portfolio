@@ -10,7 +10,7 @@ export function Hero() {
         setTimeout(() => {
             setShowTypeWriter(true)
         }, 700);
-    }, [showTypeWriter, setShowTypeWriter])
+    }, [])
 
 
     const words = [
@@ -35,9 +35,9 @@ export function Hero() {
     return (
         <div className="w-full h-screen overflow-hidden bg-black">
             <Vortex
-                particleCount={700}
+                particleCount={800}
                 backgroundColor="transparent"
-                rangeY={270}
+                rangeY={300}
                 className="flex items-center justify-center w-full h-full"
             >
                 <div className="w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col justify-center items-center text-center z-10">
@@ -68,7 +68,7 @@ export function Hero() {
                         transition={{ delay: 1.5, duration: 1 }}
                         className="text-gray-300 max-w-xl text-base md:text-lg leading-relaxed"
                     >
-                        Building reliable, modern web and mobile experiences. Learning deeper system design and exploring Generative & Agentic AI to create smarter products.
+                        I build reliable web and mobile applications for businesses, and users.
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -79,16 +79,16 @@ export function Hero() {
                         className="flex gap-4 mt-10"
                     >
                         <a
-                            href="#projects"
+                            href="#contact"
                             className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-lg shadow-blue-600/20"
                         >
-                            View Work
+                            Let's discuss a project
                         </a>
                         <a
-                            href="#contact"
+                            href="#projects"
                             className="px-8 py-3 bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full font-medium transition-all"
                         >
-                            Contact Me
+                            View my work
                         </a>
                     </motion.div>
                 </div>

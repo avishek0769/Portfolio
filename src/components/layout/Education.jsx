@@ -38,20 +38,16 @@ function Education() {
                     </p>
                 </div>
 
-                <div className="grid gap-8">
+                <div className="grid md:grid-cols-2 gap-8">
                     {educationData.map((edu, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors relative overflow-hidden group"
+                            className="h-full bg-white/5 border border-white/10 p-7 rounded-2xl hover:bg-white/10 transition-colors relative overflow-hidden group"
                         >                            
                             <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-6">
-                                <div className="bg-blue-500/20 p-4 rounded-xl border border-blue-500/30">
-                                    <GraduationCap className="text-blue-400 w-8 h-8" />
-                                </div>
-                                
                                 <div className="flex-1">
                                     <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                                         <h3 className="text-2xl font-bold text-white">{edu.degree}</h3>

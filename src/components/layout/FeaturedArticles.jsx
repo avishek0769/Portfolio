@@ -28,7 +28,7 @@ const articles = [
 
 export const FeaturedArticles = () => {
     return (
-        <div className="py-20 px-6 md:px-12 lg:px-24 bg-black text-white relative z-10">
+        <div className="py-10 pb-5 px-6 md:px-12 lg:px-24 bg-black text-white relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -38,9 +38,15 @@ export const FeaturedArticles = () => {
             >
                 <div className="flex flex-col md:flex-row justify-between items-end md:items-center mb-12 gap-6">
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-4">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                        >
                             Featured Articles
-                        </h2>
+                        </motion.h2>
                         <p className="text-gray-400 text-lg">
                             Some of my recent writings and technical deep dives.
                         </p>

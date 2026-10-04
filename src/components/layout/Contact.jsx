@@ -12,7 +12,7 @@ import { motion } from "motion/react";
 
 function Contact() {
     return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center p-4 py-20 relative z-10">
+        <div className="min-h-screen bg-black text-white flex items-center justify-center p-4 py-10 pt-0 relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -20,11 +20,17 @@ function Contact() {
                 viewport={{ once: true }}
                 className="w-full max-w-4xl"
             >
-                <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-4xl text-center sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                >
                     Get in Touch
-                </h2>
+                </motion.h2>
 
-                <div className="grid md:grid-cols-2 gap-12 items-start">
+                <div className="grid md:grid-cols-2 gap-12 items-start mt-15">
                     {/* Contact Info */}
                     <div className="space-y-8">
                         <h3 className="text-2xl font-semibold mb-6 text-blue-400">

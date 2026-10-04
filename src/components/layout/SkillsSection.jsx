@@ -1,5 +1,6 @@
 import React from 'react'
 import { Database, Layout, Server, Terminal, Brain } from 'lucide-react';
+import { motion } from 'motion/react';
 
 function SkillsSection() {
     const skillCategories = [
@@ -42,10 +43,17 @@ function SkillsSection() {
 
     return (
         <section className="max-w-7xl mx-auto px-4 pt-16 pb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-4xl text-center sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+            >
                 Skills & Expertise
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+            </motion.h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 mt-15">
                 {skillCategories.map((category, index) => {
                     let colSpan = "lg:col-span-2";
                     if (category.title === "Backend Development" || category.title === "Generative AI") {

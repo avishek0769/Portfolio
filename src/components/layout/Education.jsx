@@ -30,9 +30,15 @@ function Education() {
                 className="flex flex-col gap-12"
             >
                 <div className="flex flex-col gap-4 items-center text-center mb-4">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 text-center">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="text-4xl text-center sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                    >
                         Education
-                    </h2>
+                    </motion.h2>
                     <p className="text-gray-400 text-lg max-w-2xl">
                         My academic journey and qualifications.
                     </p>

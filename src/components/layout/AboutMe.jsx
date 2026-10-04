@@ -11,9 +11,15 @@ function AboutMe() {
                 viewport={{ once: true }}
                 className="flex flex-col gap-12"
             >
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-4xl text-center sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                >
                     About Me
-                </h2>
+                </motion.h2>
 
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="text-white md:w-1/2 flex flex-col gap-6">
@@ -81,39 +87,6 @@ function AboutMe() {
                     </div>
 
                     <div className="md:w-1/2 w-full flex flex-col sm:flex-row gap-5">
-
-                        {/* Already Done
-                        <motion.div
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.55, delay: 0.1 }}
-                            viewport={{ once: true }}
-                            className="flex-1 bg-white/[0.03] border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
-                        >
-                            <p className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold">Already done</p>
-                            <ul className="flex flex-col gap-3">
-                                {[
-                                    "Built 15+ web & mobile products",
-                                    "Delivered real client projects",
-                                    "Shipped backend-first systems",
-                                    "Integrated cloud & DevOps flows",
-                                    "Explored Generative & Agentic AI",
-                                ].map((item, i) => (
-                                    <motion.li
-                                        key={i}
-                                        initial={{ opacity: 0, x: -8 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }}
-                                        viewport={{ once: true }}
-                                        className="flex items-start gap-2.5 text-sm text-gray-300"
-                                    >
-                                        <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                                        {item}
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </motion.div> */}
-
                         {/* How I Build */}
                         <motion.div
                             initial={{ opacity: 0, y: 16 }}

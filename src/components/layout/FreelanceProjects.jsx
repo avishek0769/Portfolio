@@ -167,7 +167,7 @@ export default function FreelanceProjects() {
                     viewport={{ once: true }}
                     className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 max-w-4xl leading-tight"
                 >
-                    Real Projects Built to Grow Businesses
+                    Work Built for Businesses
                 </motion.h2>
 
                 <motion.p
@@ -177,9 +177,7 @@ export default function FreelanceProjects() {
                     viewport={{ once: true }}
                     className="text-gray-400 text-base sm:text-lg max-w-3xl mt-4 leading-relaxed"
                 >
-                    A digital presence is more than just code — it's an automated sales representative, a trust builder,
-                    and a revenue driver. Here is how custom web and mobile software created tangible ROI for client
-                    businesses.
+                    Websites and applications built for real businesses, focused on creating stronger digital experiences, improving customer engagement, and supporting business goals.
                 </motion.p>
             </div>
 
@@ -409,7 +407,7 @@ export default function FreelanceProjects() {
                     </div>
 
                     {/* Action Button for Website / App */}
-                    <div className="pt-2 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-4">
+                    <div className="pt-2  flex flex-wrap items-center justify-between gap-4">
                         {project.link ? (
                             <a
                                 href={project.link}
@@ -492,19 +490,17 @@ export default function FreelanceProjects() {
             >
                 <div className="max-w-2xl">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                        Ready to Upgrade Your Business Digital Presence?
+                        Have an idea for your business?
                     </h3>
                     <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                        Whether you need a high-converting business website, a custom booking portal, or a dedicated
-                        mobile application — software should work for you to bring more customers and increase your
-                        bottom line.
+                        Whether you need a business website, a custom web application, or a mobile app, I can help turn your requirements into a practical digital product.
                     </p>
                 </div>
                 <a
                     href="#contact"
                     className="shrink-0 px-8 py-4 bg-white text-black hover:bg-gray-100 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 cursor-pointer"
                 >
-                    <span>Get a Free Consultation</span>
+                    <span>Let's discuss a project</span>
                     <ArrowRight size={18} />
                 </a>
             </motion.div>

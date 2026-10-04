@@ -9,35 +9,28 @@ function SkillsSection() {
             icon: <Server className="w-5 h-5 text-cyan-500" />,
             textColor: "text-cyan-300",
             badgeBg: "bg-cyan-500/10 border-cyan-500/25",
-            skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "Next.js (API Routes)", "WebSockets (Socket.io)", "GraphQL", "gRPC", "MongoDB", "Mongoose", "PostgreSQL", "Prisma", "Redis", "JWT-Auth"]
-        },
-        {
-            title: "Generative AI",
-            icon: <Brain className="w-5 h-5 text-orange-500" />,
-            textColor: "text-orange-300",
-            badgeBg: "bg-orange-500/10 border-orange-500/25",
-            skills: ["OpenAI SDK", "OpenAI Agent SDK", "RAG", "Vector DB", "Memory management", "Graph memory (Neo4j)", "Local LLM (Ollama)", "LangChain", "LangGraph"]
+            skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "WebSockets (Socket.io)", "GraphQL", "gRPC", "MongoDB", "PostgreSQL", "Redis"]
         },
         {
             title: "Frontend Development",
             icon: <Layout className="w-5 h-5 text-purple-500" />,
             textColor: "text-purple-300",
             badgeBg: "bg-purple-500/10 border-purple-500/25",
-            skills: ["JS/TS", "React.js", "React Native (Mobile Apps)", "Next.js (Pages & SSR)", "Tailwind CSS", "HTML", "CSS"]
+            skills: ["JavaScript", "TypeScript", "React.js", "React Native", "Next.js", "Tailwind CSS"]
         },
         {
-            title: "DevOps & Deployment",
+            title: "Cloud & DevOps",
             icon: <Terminal className="w-5 h-5 text-pink-500" />,
             textColor: "text-pink-300",
             badgeBg: "bg-pink-500/10 border-pink-500/25",
-            skills: ["AWS", "Nginx", "Docker", "CI/CD", "Linux (CLI)", "Firebase", "Appwrite"]
+            skills: ["AWS", "Nginx", "Docker", "CI/CD", "Linux (CLI)"]
         },
         {
-            title: "Tools & Productivity",
-            icon: <Database className="w-5 h-5 text-emerald-500" />,
-            textColor: "text-emerald-300",
-            badgeBg: "bg-emerald-500/10 border-emerald-500/25",
-            skills: ["Git", "GitHub", "Postman"]
+            title: "AI & Intelligent Systems",
+            icon: <Brain className="w-5 h-5 text-orange-500" />,
+            textColor: "text-orange-300",
+            badgeBg: "bg-orange-500/10 border-orange-500/25",
+            skills: ["OpenAI SDK", "Agent SDK", "RAG", "Vector DB", "Graph memory (Neo4j)", "LangChain", "LangGraph"]
         },
     ];
 
@@ -53,37 +46,35 @@ function SkillsSection() {
                 Skills & Expertise
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 mt-15">
-                {skillCategories.map((category, index) => {
-                    let colSpan = "lg:col-span-2";
-                    if (category.title === "Backend Development" || category.title === "Generative AI") {
-                        colSpan = "lg:col-span-3";
-                    }
-
-                    return (
-                        <div
-                            key={index}
-                            className={`${colSpan} bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 flex flex-col`}
-                        >
-                            <div className="flex items-center gap-3 mb-5">
-                                <div className="p-2 rounded-lg bg-white/5">
-                                    {category.icon}
-                                </div>
-                                <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+            <div className="flex flex-col gap-6 mt-12 max-w-5xl mx-auto">
+                {skillCategories.map((category, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-5 border-b border-zinc-800/60 last:border-0"
+                    >
+                        <div className="flex items-center gap-3 w-[18rem] shrink-0">
+                            <div className="p-2 rounded-xl bg-zinc-900 border border-zinc-800">
+                                {category.icon}
                             </div>
-                            <div className="flex flex-wrap gap-2 content-start">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <span
-                                        key={skillIndex}
-                                        className={`px-3 py-1.5 rounded-md text-sm font-medium border ${category.badgeBg} ${category.textColor}`}
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
+                            <h3 className="text-xl font-semibold text-white">{category.title}</h3>
                         </div>
-                    );
-                })}
+
+                        <div className="flex flex-wrap gap-2 items-center">
+                            {category.skills.map((skill, skillIndex) => (
+                                <span
+                                    key={skillIndex}
+                                    className={`px-3 py-1 rounded-lg text-md font-medium border ${category.badgeBg} ${category.textColor}`}
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </section>
     )

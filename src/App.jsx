@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar'
 import { Hero } from './components/layout/Hero'
 import AboutMe from './components/layout/AboutMe'
 import Education from './components/layout/Education'
+import FreelanceProjects from './components/layout/FreelanceProjects'
 import SkillsSection from './components/layout/SkillsSection'
 import { Projects } from './components/layout/Projects'
 import { FeaturedArticles } from './components/layout/FeaturedArticles'
@@ -21,6 +22,9 @@ function Home() {
       </div>
       <div id="education">
         <Education />
+      </div>
+      <div id="freelance">
+        <FreelanceProjects />
       </div>
       <div id="projects">
         <Projects />

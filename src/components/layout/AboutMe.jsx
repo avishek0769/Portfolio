@@ -12,7 +12,7 @@ function AboutMe() {
                 className="flex flex-col gap-12"
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600">
-                    The Mind Behind the Screen
+                    About Me
                 </h2>
 
                 <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -27,111 +27,133 @@ function AboutMe() {
                                 <span className="text-white font-semibold">
                                     Full Stack Developer
                                 </span>{" "}
-                                based in Kolkata, India who enjoys building practical
-                                and reliable products across web and mobile. My
-                                work primarily revolves around{" "}
+                                from Kolkata, India. I build practical web and mobile products, with a particular focus on{" "}
                                 <span className="text-white font-semibold">
                                     backend development
-                                </span>
-                                , where I focus on writing{" "}
-                                <span className="text-white font-semibold">
-                                    clean, maintainable code
                                 </span>{" "}
-                                and building systems that are efficient and
-                                meaningful.
+                                and the systems that make applications{" "}
+                                <span className="text-white font-semibold">
+                                    reliable and scalable
+                                </span>
+                                .
                             </p>
 
                             <p>
-                                I’m currently focused on deepening my
-                                understanding of{" "}
+                                I've worked on both personal products and real-world projects for businesses, ranging from websites and mobile applications to{" "}
+                                <span className="text-white font-semibold">
+                                    cloud-based platforms
+                                </span>{" "}
+                                and{" "}
+                                <span className="text-white font-semibold">
+                                    developer tools
+                                </span>
+                                . I enjoy taking an idea from an initial concept to something people can actually use.
+                            </p>
+
+                            <p>
+                                My approach is simple: understand the problem first, choose the right tools for it, and build software that is{" "}
+                                <span className="text-white font-semibold">
+                                    reliable
+                                </span>
+                                ,{" "}
+                                <span className="text-white font-semibold">
+                                    maintainable
+                                </span>
+                                , and useful rather than unnecessarily complicated.
+                            </p>
+
+                            <p>
+                                Outside of building products, I'm continuously exploring{" "}
                                 <span className="text-white font-semibold">
                                     system design
                                 </span>
                                 ,{" "}
                                 <span className="text-white font-semibold">
-                                    scalability
+                                    cloud infrastructure
                                 </span>
                                 , and{" "}
                                 <span className="text-white font-semibold">
-                                    performance
-                                </span>{" "}
-                                as I continue building and learning. I’m
-                                particularly interested in how backend systems
-                                are structured, how they perform, and how they
-                                evolve as complexity grows.
-                            </p>
-
-                            <p>
-                                Alongside development, I also work with{" "}
-                                <span className="text-white font-semibold">
-                                    cloud
-                                </span>{" "}
-                                and{" "}
-                                <span className="text-white font-semibold">
-                                    DevOps tools
-                                </span>{" "}
-                                to support development, deployment, and overall
-                                system stability.
-                            </p>
-
-                            <p>
-                                I’m also exploring{" "}
-                                <span className="text-white font-semibold">
                                     Generative AI
                                 </span>{" "}
-                                and{" "}
-                                <span className="text-white font-semibold">
-                                    Agentic AI
-                                </span>
-                                , aiming to build more intelligent and adaptive
-                                applications.
+                                to understand how modern applications can be designed and scaled better.
                             </p>
                         </div>
                     </div>
 
-                    <div className="md:w-1/2 w-full">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            {[
-                                {
-                                    title: "Experience",
-                                    value: "Self-driven",
-                                    desc: "Building web & mobile projects while implementing DevOps practices",
-                                },
-                                {
-                                    title: "Projects",
-                                    value: "15+",
-                                    desc: "Completed personal projects with MERN and React Native",
-                                },
-                                {
-                                    title: "Exploration",
-                                    value: "System Design & AI",
-                                    desc: "Applying scalable architecture concepts and experimenting with Generative & Agentic AI",
-                                },
-                                {
-                                    title: "Focus",
-                                    value: "Backend-first",
-                                    desc: "Prioritizing robust, maintainable, and scalable backend systems in every project",
-                                },
-                            ].map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors flex flex-col justify-center"
-                                >
-                                    <h3 className="text-3xl font-bold text-blue-400 mb-4">
-                                        {item.title}
-                                    </h3>
-                                    <h4 className="text-xl font-semibold text-white mb-3">
-                                        {item.value}
-                                    </h4>
-                                    <p className="text-gray-400 text-sm leading-relaxed">
-                                        {item.desc}
-                                    </p>
-                                </motion.div>
-                            ))}
-                        </div>
+                    <div className="md:w-1/2 w-full flex flex-col sm:flex-row gap-5">
+
+                        {/* Already Done
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex-1 bg-white/[0.03] border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
+                        >
+                            <p className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold">Already done</p>
+                            <ul className="flex flex-col gap-3">
+                                {[
+                                    "Built 15+ web & mobile products",
+                                    "Delivered real client projects",
+                                    "Shipped backend-first systems",
+                                    "Integrated cloud & DevOps flows",
+                                    "Explored Generative & Agentic AI",
+                                ].map((item, i) => (
+                                    <motion.li
+                                        key={i}
+                                        initial={{ opacity: 0, x: -8 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }}
+                                        viewport={{ once: true }}
+                                        className="flex items-start gap-2.5 text-sm text-gray-300"
+                                    >
+                                        <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                                        {item}
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.div> */}
+
+                        {/* How I Build */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="flex-1 bg-white/3 border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
+                        >
+                            <p className="text-2xl uppercase tracking-widest text-gray-500 font-semibold mb-4">How I build</p>
+                            <div className="flex flex-col gap-1">
+                                {[
+                                    { step: "Understand", desc: "Clarify the real problem before writing a single line of code." },
+                                    { step: "Design",     desc: "Plan the structure, data flow, and interfaces with intention." },
+                                    { step: "Build",      desc: "Write clean, maintainable code and ship incrementally." },
+                                    { step: "Improve",    desc: "Reflect, gather feedback, and refine continuously." },
+                                ].map(({ step, desc }, i, arr) => (
+                                    <motion.div
+                                        key={step}
+                                        initial={{ opacity: 0, x: 8 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.2 + i * 0.09 }}
+                                        viewport={{ once: true }}
+                                        className="flex gap-3"
+                                    >
+                                        {/* Timeline spine */}
+                                        <div className="flex flex-col items-center">
+                                            <span className="w-2 h-2 rounded-full bg-blue-500 mt-1 shrink-0" />
+                                            {i < arr.length - 1 && (
+                                                <span className="w-px flex-1 bg-gradient-to-b from-blue-500/40 to-transparent mt-1" />
+                                            )}
+                                        </div>
+                                        <div className="pb-4">
+                                            <p className="text-xl font-semibold text-white leading-none mb-1">{step}</p>
+                                            <p className="text-sm text-gray-400 leading-relaxed">{desc}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+
                     </div>
                 </div>
             </motion.div>

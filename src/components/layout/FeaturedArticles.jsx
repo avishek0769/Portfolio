@@ -28,7 +28,7 @@ const articles = [
 
 export const FeaturedArticles = () => {
     return (
-        <div className="py-10 pb-5 px-6 md:px-12 lg:px-24 bg-black text-white relative z-10">
+        <section id="articles" aria-label="Featured Articles" className="py-10 pb-5 px-6 md:px-12 lg:px-24 bg-black text-white relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -64,39 +64,40 @@ export const FeaturedArticles = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {articles.map((article, index) => (
-                        <motion.a
-                            href={article.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 hover:border-blue-500/50 hover:bg-zinc-800/80 transition-all duration-300 group flex flex-col h-full"
-                        >
-                            <div className="flex justify-between items-center mb-4">
-                                <span className="text-xs px-3 py-1 bg-black text-gray-300 rounded-full border border-zinc-700">
-                                    {article.platform}
-                                </span>
-                                <span className="text-sm text-gray-500">
-                                    {article.date}
-                                </span>
-                            </div>
-                            <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-3">
-                                {article.title}
-                            </h3>
-                            <p className="text-gray-400 mb-6 flex-grow">
-                                {article.excerpt}
-                            </p>
-                            <div className="flex items-center text-sm font-medium text-blue-400 group-hover:text-blue-300 transition-colors mt-auto">
-                                Read Article <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </motion.a>
+                        <article key={index} className="h-full flex flex-col">
+                            <motion.a
+                                href={article.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 hover:border-blue-500/50 hover:bg-zinc-800/80 transition-all duration-300 group flex flex-col h-full"
+                            >
+                                <div className="flex justify-between items-center mb-4">
+                                    <span className="text-xs px-3 py-1 bg-black text-gray-300 rounded-full border border-zinc-700">
+                                        {article.platform}
+                                    </span>
+                                    <span className="text-sm text-gray-500">
+                                        {article.date}
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-3">
+                                    {article.title}
+                                </h3>
+                                <p className="text-gray-400 mb-6 flex-grow">
+                                    {article.excerpt}
+                                </p>
+                                <div className="flex items-center text-sm font-medium text-blue-400 group-hover:text-blue-300 transition-colors mt-auto">
+                                    Read Article <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </motion.a>
+                        </article>
                     ))}
                 </div>
             </motion.div>
-        </div>
+        </section>
     );
 };
 

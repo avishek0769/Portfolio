@@ -146,7 +146,7 @@ export default function FreelanceProjects() {
     };
 
     return (
-        <section className="py-12 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto bg-black text-white relative z-10">
+        <section id="freelance" aria-label="Client Solutions & Business Impact" className="py-12 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto bg-black text-white relative z-10">
             {/* Header Badge & Title */}
             <div className="flex flex-col items-center text-center mb-16">
                 <motion.div
@@ -348,7 +348,7 @@ export default function FreelanceProjects() {
                                         : "border-zinc-800 opacity-50 hover:opacity-100"
                                 }`}
                             >
-                                <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
+                                <img src={img} alt={`${project.title} preview thumbnail ${idx + 1}`} loading="lazy" className="w-full h-full object-cover" />
                             </button>
                         ))}
                     </div>

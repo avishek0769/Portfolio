@@ -46,7 +46,7 @@ function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-24 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto text-white relative z-10">
+        <section id="contact" aria-label="Contact Information" className="py-24 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto text-white relative z-10">
             {/* Header Badge & Title */}
             <div className="flex flex-col items-center text-center mb-16">
                 <motion.h2

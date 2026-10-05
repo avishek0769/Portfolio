@@ -35,7 +35,7 @@ function SkillsSection() {
     ];
 
     return (
-        <section className="max-w-7xl mx-auto px-4 pt-16 pb-20">
+        <section id="skills" aria-label="Skills & Expertise" className="max-w-7xl mx-auto px-4 pt-16 pb-20">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

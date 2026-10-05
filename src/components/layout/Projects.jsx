@@ -117,7 +117,7 @@ function CopyButton({ value, label }) {
 // ── Main export ──────────────────────────────────────────────────────────────
 export function Projects() {
     return (
-        <div className="w-full py-20 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto">
+        <section id="projects" aria-label="Featured Projects" className="w-full py-20 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto">
 
             {/* ── Header ── */}
             <div className="flex flex-col items-center text-center mb-12">
@@ -217,7 +217,7 @@ export function Projects() {
                                     {project.tech.map((t) => (
                                         <span
                                             key={t}
-                                            className="px-2.5 py-1 text-xs rounded-lg bg-blue-500/8 border border-blue-500/15 text-blue-300/80 font-medium"
+                                            className="px-2.5 py-1 text-sm rounded-lg bg-blue-500/8 border border-blue-500/15 text-blue-300/80 font-medium"
                                         >
                                             {t}
                                         </span>
@@ -265,6 +265,6 @@ export function Projects() {
                 </div>
             </Timeline>
 
-        </div>
+        </section>
     );
 }

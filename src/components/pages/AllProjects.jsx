@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Github, ExternalLink } from "lucide-react";
+import SEO from '../common/SEO';
 
 const projectsData = [
     {
@@ -185,71 +186,107 @@ const projectsData = [
     },
 ];
 
+const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Projects Showcase by Avishek Adhikary",
+    "description": "Complete list of software projects and systems built by Avishek Adhikary",
+    "itemListElement": projectsData.map((project, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "item": {
+            "@type": "SoftwareApplication",
+            "name": project.title,
+            "description": project.points[0] || project.title,
+            "applicationCategory": "DeveloperApplication",
+            "url": project.link || project.github || "https://avishekadhikary.in/projects"
+        }
+    }))
+};
+
 const AllProjects = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
-        <div className="min-h-screen pt-24 px-4 sm:px-6 md:px-12 lg:px-24 pb-12 bg-black text-white w-full max-w-full overflow-x-hidden">
-            <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-blue-400">All Projects</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                {projectsData.map((project, index) => (
-                    <div key={index} className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-neutral-600 transition-colors">
-                        <h2 className="text-2xl font-bold mb-3">{project.title}</h2>
-                        <ul className="list-disc pl-5 mb-4 text-gray-400 text-xs md:text-sm space-y-1.5 min-h-[9rem] max-h-[12rem] overflow-y-auto pr-2 custom-scrollbar">
-                            {project.points && project.points.map((point, i) => (
-                                <li key={i}>{point}</li>
-                            ))}
-                        </ul>
+        <>
+            <SEO
+                title="All Projects & Software Builds — Avishek Adhikary"
+                description="Explore all software engineering projects built by Avishek Adhikary, including AI platforms, cloud IDEs, WebRTC streaming apps, custom DNS/SMTP servers, and CLI developer tools."
+                canonical="https://avishekadhikary.in/projects"
+                schema={projectsSchema}
+            />
+            <div className="min-h-screen pt-24 px-4 sm:px-6 md:px-12 lg:px-24 pb-12 bg-black text-white w-full max-w-full overflow-x-hidden">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                >
+                    All Projects
+                </motion.h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    {projectsData.map((project, index) => (
+                        <article key={index} className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-neutral-600 transition-colors flex flex-col justify-between">
+                            <div>
+                                <h2 className="text-2xl font-bold mb-3">{project.title}</h2>
+                                <ul className="list-disc pl-5 mb-4 text-gray-400 text-xs md:text-sm space-y-1.5 min-h-[9rem] max-h-[12rem] overflow-y-auto pr-2 custom-scrollbar">
+                                    {project.points && project.points.map((point, i) => (
+                                        <li key={i}>{point}</li>
+                                    ))}
+                                </ul>
 
-                        <div className="mb-4 flex flex-wrap gap-2">
-                            {project.tech.map((tech, i) => (
-                                <span key={i} className="text-xs px-2 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
+                                <div className="mb-4 flex flex-wrap gap-2">
+                                    {project.tech.map((tech, i) => (
+                                        <span key={i} className="text-xs px-2 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
 
-                        <div className="flex flex-wrap items-center gap-3 mt-6">
-                            {project.github ? (
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-xs md:text-sm text-white hover:bg-white/10 transition-all flex items-center gap-1.5"
-                                >
-                                    <Github size={14} />
-                                    GitHub
-                                </a>
-                            ) : (
-                                <span className="px-4 py-2 bg-gray-800/40 text-gray-500 rounded-full text-xs md:text-sm border border-gray-700/45 flex items-center gap-1.5 cursor-not-allowed">
-                                    <Github size={14} />
-                                    GitHub
-                                </span>
-                            )}
+                            <div className="flex flex-wrap items-center gap-3 mt-6">
+                                {project.github ? (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-xs md:text-sm text-white hover:bg-white/10 transition-all flex items-center gap-1.5"
+                                    >
+                                        <Github size={14} />
+                                        GitHub
+                                    </a>
+                                ) : (
+                                    <span className="px-4 py-2 bg-gray-800/40 text-gray-500 rounded-full text-xs md:text-sm border border-gray-700/45 flex items-center gap-1.5 cursor-not-allowed">
+                                        <Github size={14} />
+                                        GitHub
+                                    </span>
+                                )}
 
-                            {project.link ? (
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-md shadow-blue-600/10 flex items-center gap-1.5 text-xs md:text-sm"
-                                >
-                                    <ExternalLink size={14} />
-                                    Live Demo
-                                </a>
-                            ) : (
-                                <span className="px-4 py-2 bg-gray-800/40 text-gray-500 rounded-full text-xs md:text-sm border border-gray-700/45 flex items-center gap-1.5 cursor-not-allowed">
-                                    <ExternalLink size={14} />
-                                    Live Demo
-                                </span>
-                            )}
-                        </div>
-                    </div>
-                ))}
+                                {project.link ? (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-md shadow-blue-600/10 flex items-center gap-1.5 text-xs md:text-sm"
+                                    >
+                                        <ExternalLink size={14} />
+                                        Live Demo
+                                    </a>
+                                ) : (
+                                    <span className="px-4 py-2 bg-gray-800/40 text-gray-500 rounded-full text-xs md:text-sm border border-gray-700/45 flex items-center gap-1.5 cursor-not-allowed">
+                                        <ExternalLink size={14} />
+                                        Live Demo
+                                    </span>
+                                )}
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

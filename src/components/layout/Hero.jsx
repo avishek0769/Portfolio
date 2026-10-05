@@ -33,7 +33,7 @@ export function Hero() {
     ];
 
     return (
-        <div className="w-full h-screen overflow-hidden bg-black">
+        <section id="hero" aria-label="Hero Introduction" className="w-full h-screen overflow-hidden bg-black">
             <Vortex
                 particleCount={800}
                 backgroundColor="transparent"
@@ -56,8 +56,9 @@ export function Hero() {
                         </p>
                     </motion.div>
 
-                    {/* Typewriter Effect */}
+                    {/* Typewriter Effect & Crawler Accessible Fallback */}
                     <div className="min-h-16 flex items-center justify-center lg:w-[65rem] md:w-[45rem] mb-6 mt-6">
+                        <span className="sr-only">Turning Concepts into Systems.</span>
                         {showTypeWriter && <TypewriterEffect words={words} className="text-center" />}
                     </div>
 
@@ -93,6 +94,6 @@ export function Hero() {
                     </motion.div>
                 </div>
             </Vortex>
-        </div>
+        </section>
     );
 }

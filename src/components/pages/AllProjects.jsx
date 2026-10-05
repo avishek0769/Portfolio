@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Github, ExternalLink } from "lucide-react";
 import SEO from '../common/SEO';
+import { motion } from 'motion/react';
 
 const projectsData = [
     {
@@ -223,7 +224,7 @@ const AllProjects = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
+                    className="text-4xl sm:text-5xl md:text-6xl mb-10 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 leading-tight"
                 >
                     All Projects
                 </motion.h2>

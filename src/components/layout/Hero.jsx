@@ -77,17 +77,17 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 2, duration: 0.5 }}
-                        className="flex gap-4 mt-10"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10 w-full sm:w-auto px-4 sm:px-0"
                     >
                         <a
                             href="#contact"
-                            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-lg shadow-blue-600/20"
+                            className="w-full max-w-xs sm:max-w-none sm:w-auto text-center px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white rounded-full text-sm sm:text-base font-medium transition-all shadow-lg shadow-blue-600/20"
                         >
                             Let's discuss a project
                         </a>
                         <a
                             href="#freelance"
-                            className="px-8 py-3 bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full font-medium transition-all"
+                            className="w-full max-w-xs sm:max-w-none sm:w-auto text-center px-6 sm:px-8 py-3 bg-transparent border border-white/20 hover:bg-white/10 active:scale-[0.98] text-white rounded-full text-sm sm:text-base font-medium transition-all"
                         >
                             View my work
                         </a>

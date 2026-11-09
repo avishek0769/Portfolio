@@ -18,7 +18,7 @@ import {
 const freelanceProjects = [
     {
         id: "unevox",
-        title: "Unevox — Social Media Marketing Agency Website",
+        title: "Unevox - Social Media Marketing Agency Website",
         category: "Business Website & Digital Agency",
         isApp: false,
         link: "https://unevox.netlify.app",
@@ -39,7 +39,7 @@ const freelanceProjects = [
     },
     {
         id: "farmigo",
-        title: "Farmigo — Agricultural E-commerce Mobile App",
+        title: "Farmigo - Agricultural E-commerce Mobile App",
         category: "Mobile Commerce & Agriculture",
         isApp: true,
         link: null,
@@ -69,7 +69,7 @@ const freelanceProjects = [
     },
     {
         id: "restaurant",
-        title: "Ember & Oak — Restaurant & Direct Online Ordering",
+        title: "Ember & Oak - Restaurant & Direct Online Ordering",
         category: "Hospitality & Food Business",
         isApp: false,
         link: "https://embernoakfood.netlify.app",
@@ -90,7 +90,7 @@ const freelanceProjects = [
     },
     {
         id: "clothing",
-        title: "Urban Threads — Boutique Fashion E-Commerce Website",
+        title: "Urban Threads - Boutique Fashion E-Commerce Website",
         category: "Fashion & E-Commerce",
         isApp: false,
         link: "https://urbanthreadsfashion.netlify.app",
@@ -200,7 +200,7 @@ export default function FreelanceProjects() {
                             ) : (
                                 <Globe size={16} className={isActive ? "text-white" : "text-blue-400"} />
                             )}
-                            <span>{p.title.split("—")[0].trim()}</span>
+                            <span>{p.title.split("-")[0].trim()}</span>
                             {p.isApp && (
                                 <span className="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 ml-1">
                                     App
@@ -365,7 +365,7 @@ export default function FreelanceProjects() {
                         </div>
 
                         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 leading-snug">
-                            {project.title.split("—")[0].trim()}
+                            {project.title.split("-")[0].trim()}
                         </h3>
 
                         {/* <p className="text-blue-300 text-sm font-medium mb-4 italic">"{project.tagline}"</p> */}

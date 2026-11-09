@@ -213,7 +213,7 @@ const AllProjects = () => {
     return (
         <>
             <SEO
-                title="All Projects & Software Builds — Avishek Adhikary"
+                title="All Projects & Software Builds - Avishek Adhikary"
                 description="Explore all software engineering projects built by Avishek Adhikary, including AI platforms, cloud IDEs, WebRTC streaming apps, custom DNS/SMTP servers, and CLI developer tools."
                 canonical="https://avishekadhikary.in/projects"
                 schema={projectsSchema}

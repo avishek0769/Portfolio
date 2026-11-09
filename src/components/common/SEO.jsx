@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const DEFAULT_SITE_URL = 'https://avishekadhikary.in';
-const DEFAULT_TITLE = 'Avishek Adhikary — Full Stack Developer & Backend Engineer';
+const DEFAULT_TITLE = 'Avishek Adhikary - Full Stack Developer & Backend Engineer';
 const DEFAULT_DESCRIPTION = 'Portfolio of Avishek Adhikary, a Full Stack Developer based in Kolkata, India. Specializing in Node.js, React, distributed backend systems, cloud hosting, and AI applications.';
 const DEFAULT_IMAGE = `${DEFAULT_SITE_URL}/meAvi.jpeg`;
 

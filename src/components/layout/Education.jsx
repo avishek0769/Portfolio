@@ -6,9 +6,9 @@ const educationData = [
     {
         degree: "Bachelor of Computer Application",
         institution: "NSHM Knowledge Campus, Kolkata",
-        year: "2024 - 2027",
+        year: "2024 - 2028",
         location: "Kolkata, India",
-        grade: "Current SGPA: 8.1"
+        grade: "Current CGPA: 7.6"
     },
     {
         degree: "Higher Secondary Education",

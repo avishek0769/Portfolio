@@ -5,7 +5,7 @@ import { Timeline } from "../ui/timeline";
 
 const projectsData = [
     {
-        title: "DocChat — AI Docs Assistant",
+        title: "DocChat - AI Docs Assistant",
         points: [
             "Built an AI documentation chat platform that crawls documentation websites and transforms them into searchable knowledge bases.",
             "Implemented vector-based RAG using Qdrant for embedding-based retrieval.",
@@ -18,7 +18,7 @@ const projectsData = [
         link: "https://avishek.short.gy/docchat",
     },
     {
-        title: "Codium — Cloud IDE",
+        title: "Codium - Cloud IDE",
         points: [
             "Built a cloud-based IDE that allows users to write and execute code directly from the browser.",
             "Used Monaco Editor to provide a VS Code-like code editing experience.",
@@ -31,7 +31,7 @@ const projectsData = [
         link: "https://avishek.short.gy/codium",
     },
     {
-        title: "VideoTubes — Video Streaming App",
+        title: "VideoTubes - Video Streaming App",
         points: [
             "Built a video streaming platform with an end-to-end video processing and delivery pipeline.",
             "Implemented video transcoding using FFmpeg to process uploaded videos into streaming-compatible formats.",
@@ -57,7 +57,7 @@ const projectsData = [
         link: "https://avishek.short.gy/videocall",
     },
     {
-        title: "Cloudify — Frontend Hosting Platform",
+        title: "Cloudify - Frontend Hosting Platform",
         points: [
             "Built a cloud hosting platform that allows users to deploy and host frontend applications.",
             "Implemented an automated deployment pipeline using Docker containers and AWS ECS/Fargate.",
@@ -70,7 +70,7 @@ const projectsData = [
         link: "https://avishek.short.gy/cloudify",
     },
     {
-        title: "SpotMe — Photo Discovery",
+        title: "SpotMe - Photo Discovery",
         points: [
             "Built an AI-powered event photo discovery platform for weddings, college events, concerts, conferences, and other large gatherings.",
             "Implemented face-based photo matching that allows guests to upload a selfie and discover their photos from large event collections.",
